@@ -23,7 +23,7 @@ die( "Nothing to check.\n" ) if keys(%fileList) == 0;
 
 #print map { "$_ => $fileList{$_}\n" } keys %fileList;
 
-foreach my $file ( keys %fileList ) {
+foreach my $file ( sort keys %fileList ) {
 	open SOMEFILE, "$file" or die("gg:$file\n");
 	$crc = crc32(*SOMEFILE);
 
