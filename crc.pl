@@ -11,7 +11,7 @@ die( "Usage: crcChecker\n" ) if @ARGV != 0;
 # Construct file list
 foreach my $ele ( @_l ) {
 	chomp( $ele );
-	if( ($_tmp = $ele) =~ m/(crc_)?([0-9a-f]{8})[])](\.(mkv|avi|mp4))/i ) {
+	if( ($_tmp = $ele) =~ m/[\(\[](crc_)?([0-9a-f]{8})[\]\)]/i ) {
 		$_tmp = $2;
 		$fileList{ $ele } = $_tmp;
 	} else {
